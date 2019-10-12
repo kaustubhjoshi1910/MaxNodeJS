@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kaustubhjoshi1910/MaxNodeJS/issues"
   },
-  "homepage": "https://github.com/kaustubhjoshi1910/MaxNodeJS#readme"
+  "homepage": "https://github.com/kaustubhjoshi1910/MaxNodeJS#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
 }
