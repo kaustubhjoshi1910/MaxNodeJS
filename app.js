@@ -1,8 +1,23 @@
-const http = require("http"); // importing the module of http
 
-const routes=require('./routes');
+const express = require("express");
 
-const server = http.createServer(routes);
+const app = express();
 
+const adminRouter = require('./routes/admin');
 
-server.listen(3000); // listening to the server
+const shopRouter = require('./routes/shop');
+
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({extended:false}));
+
+app.use('/admin',adminRouter);
+
+app.use(shopRouter);
+
+app.use((req,res,next)=>
+{
+    res.status(404).send('<h1>Page Not Found </h1>');
+});
+
+app.listen(3000);
